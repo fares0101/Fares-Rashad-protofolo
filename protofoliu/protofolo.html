@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#005f7f">
+    <meta name="description" content="Fares Rashad - Mobile App Developer Portfolio. Specializing in Flutter, Android, and iOS development.">
+    <meta name="keywords" content="mobile developer, flutter, android, ios, portfolio">
+    <meta name="author" content="Fares Rashad">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Fares Rashad | Mobile App Developer</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: linear-gradient(135deg, #005f7f, #00b3b3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-link {
+            color: white !important;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-link:hover {
+            color: #005f7f !important;
+            background-color: white;
+            transform: translateY(-2px);
+        }
+        .nav-link i {
+            font-size: 1.2em;
+        }
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar-brand i {
+            font-size: 1.5em;
+            color: #ffde59;
+        }
+        .navbar-toggler {
+            border: 2px solid white;
+            padding: 8px;
+        }
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .project {
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .project-image-container {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-title {
+            color: #005f7f;
+            margin-top: 15px;
+        }
+        .card-text {
+            color: #666;
+            line-height: 1.6;
+        }
+        .profile-image {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Skills Section Styling */
+        .skills-section {
+            background-color: white;
+            padding: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .skill-item:hover {
+            background-color: #f8f9fa;
+            transform: translateX(5px);
+        }
+        .skill-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #005f7f;
+            width: 40px;
+            text-align: center;
+        }
+        .skill-name {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* Contact Section Styling */
+        .contact-section {
+            background-color: white;
+            padding: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #005f7f, #00b3b3);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+        .social-link i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .section-title {
+            color: #005f7f;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        /* Responsive Design Improvements */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 24px;
+            }
+            .nav-link {
+                margin: 5px 0;
+                padding: 10px;
+            }
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .social-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            .project-image-container {
+                height: 180px;
+            }
+            .skill-item {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            .name {
+                font-size: 20px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header {
+                position: static;
+                background: none;
+                box-shadow: none;
+            }
+            .nav-link {
+                color: #333 !important;
+            }
+            .social-link {
+                border: 1px solid #333;
+                color: #333;
+            }
+            .project:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-code"></i>
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        <i class="fas fa-user-circle"></i>
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">
+                        <i class="fas fa-laptop-code"></i>
+                        Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">
+                        <i class="fas fa-tools"></i>
+                        Skills
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="container my-5">
+    <section id="about" class="text-center">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hello!👋 I am a Software Engineering student from MU, specializing in mobile app development with Flutter. My focus is on creating high-performance, user-friendly applications with smooth, responsive, and visually appealing user interfaces. I am passionate about problem-solving and dedicated to continuously learning new technologies, tools, and frameworks. Eager to collaborate on innovative projects, I strive to contribute to cutting-edge mobile app development.</p>
+        
+        <img src="6046579423622317751_121.jpg" alt="Profile Image" class="profile-image">
+        <div class="name">Fares Rashad</div>
+        
+        <!-- Skills Section -->
+        <div id="skills" class="skills-section">
+            <h2 class="section-title text-center">My Skills</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="skill-item">
+                            <i class="fab fa-flutter skill-icon"></i>
+                            <span class="skill-name">Flutter Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-android skill-icon"></i>
+                            <span class="skill-name">Android Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-apple skill-icon"></i>
+                            <span class="skill-name">iOS Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5 skill-icon"></i>
+                            <span class="skill-name">HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt skill-icon"></i>
+                            <span class="skill-name">CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-csharp skill-icon"></i>
+                            <span class="skill-name">C#</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="skill-item">
+                            <i class="fab fa-python skill-icon"></i>
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database skill-icon"></i>
+                            <span class="skill-name">Database Management</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code skill-icon"></i>
+                            <span class="skill-name">Problem Solving</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt skill-icon"></i>
+                            <span class="skill-name">UI/UX Design</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-users skill-icon"></i>
+                            <span class="skill-name">Team Collaboration</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cube skill-icon"></i>
+                            <span class="skill-name">OOP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="contact-section">
+            <h2 class="section-title text-center">Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://wa.me/0201028091104" class="social-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100010979925926" class="social-link" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/fares_bin_rashad/" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
+                </a>
+                <a href="mailto:rashadfares608@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    Gmail
+                </a>
+                <a href="https://www.linkedin.com/in/fares-rashad-14baba226/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="text-center mb-5">My Projects</h2>
+        <div class="row">
+            <!-- Project 1 -->
+            <div class="col-md-4">
+                <div class="card project">
+                    <div class="card-body text-center">
+                        <div class="project-image-container mb-3">
+                            <img src="project1.jpg" alt="Project 1" class="img-fluid project-image">
+                        </div>
+                        <h3 class="card-title">Project 1</h3>
+                        <p class="card-text">Add your project description here</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="col-md-4">
+                <div class="card project">
+                    <div class="card-body text-center">
+                        <div class="project-image-container mb-3">
+                            <img src="project2.jpg" alt="Project 2" class="img-fluid project-image">
+                        </div>
+                        <h3 class="card-title">Project 2</h3>
+                        <p class="card-text">Add your project description here</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="col-md-4">
+                <div class="card project">
+                    <div class="card-body text-center">
+                        <div class="project-image-container mb-3">
+                            <img src="project3.jpg" alt="Project 3" class="img-fluid project-image">
+                        </div>
+                        <h3 class="card-title">Project 3</h3>
+                        <p class="card-text">Add your project description here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Fares Rashad. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
